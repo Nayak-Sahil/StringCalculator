@@ -38,6 +38,10 @@ public class StringCalculator {
                 isContainsNegative = true;
             }
 
+            if(Integer.parseInt(digit) > 1000){
+                continue;
+            }
+
             sum += Integer.parseInt(digit);
         }
 
