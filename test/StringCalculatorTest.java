@@ -9,4 +9,10 @@ public class StringCalculatorTest{
         StringCalculator calc = new StringCalculator();
         assertEquals(0, calc.add(""), "Empty string should return 0");
     }
+
+    @Test
+    public void shouldReturnSameOnSingleDigit(){
+        StringCalculator calc = new StringCalculator();
+        assertEquals(1, calc.add("1"), "Number should return the same number");
+    }
 }
