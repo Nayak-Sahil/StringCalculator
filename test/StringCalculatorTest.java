@@ -43,4 +43,13 @@ public class StringCalculatorTest{
         assertEquals(3, calc.add("//.\n1.2"), "Custom delimiter should be handled");
         assertEquals(3, calc.add("//|\n1|2"), "Custom delimiter should be handled");
     }
+
+    @Test
+    public void shouldThrowExceptionOnNegativeNumber(){
+        try{
+            calc.add("-1,2");
+        }catch(Exception e){
+            assertEquals("Negatives numbers not allowed: -1", e.getMessage());
+        }
+    }
 }
