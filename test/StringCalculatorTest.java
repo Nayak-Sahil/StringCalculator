@@ -28,4 +28,9 @@ public class StringCalculatorTest{
     public void shouldReturnSumOnTwoDigits(){
         assertEquals(3, calc.add("1,2"), "Sum of two numbers should return the sum");
     }
+
+    @Test
+    public void shouldHandleNewLineDelimiter(){
+        assertEquals(6, calc.add("1\n2,3"), "New line delimiter should be handled");
+    }
 }
