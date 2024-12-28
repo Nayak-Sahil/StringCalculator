@@ -23,4 +23,9 @@ public class StringCalculatorTest{
     public void shouldReturnSameOnSingleDigit(){
         assertEquals(1, calc.add("1"), "Number should return the same number");
     }
+
+    @Test
+    public void shouldReturnSumOnTwoDigits(){
+        assertEquals(3, calc.add("1,2"), "Sum of two numbers should return the sum");
+    }
 }
