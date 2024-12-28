@@ -32,5 +32,8 @@ public class StringCalculatorTest{
     @Test
     public void shouldHandleNewLineDelimiter(){
         assertEquals(6, calc.add("1\n2,3"), "New line delimiter should be handled");
+        assertEquals(6, calc.add("1\n2\n3"), "New line delimiter should be handled");
+        assertEquals(6, calc.add("1,2\n3"), "New line delimiter should be handled");
+        //! Note: "1,\n3" is invalid input, it means after comma there should be a number.
     }
 }
