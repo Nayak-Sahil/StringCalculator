@@ -52,4 +52,10 @@ public class StringCalculatorTest{
             assertEquals("Negatives numbers not allowed: -1", e.getMessage());
         }
     }
+
+    @Test
+    public void shouldIgnoreNumberGraterThanThousands(){
+        assertEquals(2, calc.add("2,1001"), "Numbers greater than 1000 should be ignored");
+        assertEquals(1002, calc.add("2,1000"), "Numbers less than or equal to 1000 should be considered");
+    }
 }
