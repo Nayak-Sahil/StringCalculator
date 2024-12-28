@@ -36,4 +36,11 @@ public class StringCalculatorTest{
         assertEquals(6, calc.add("1,2\n3"), "New line delimiter should be handled");
         //! Note: "1,\n3" is invalid input, it means after comma there should be a number.
     }
+
+    @Test
+    public void shouldHandleCustomDelimiter(){
+        assertEquals(3, calc.add("//;\n1;2"), "Custom delimiter should be handled");
+        assertEquals(3, calc.add("//.\n1.2"), "Custom delimiter should be handled");
+        assertEquals(3, calc.add("//|\n1|2"), "Custom delimiter should be handled");
+    }
 }
