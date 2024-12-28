@@ -28,10 +28,22 @@ public class StringCalculator {
         // Split the input string by commas to Extract individual numbers
         String[] digits = numbers.split(",");
 
+        boolean isContainsNegative = false;
+        String negativeNumbers = "";
+        
         for (String digit : digits) {
+            if(digit.startsWith("-")){
+                if(isContainsNegative) negativeNumbers += ",";
+                negativeNumbers += digit;
+                isContainsNegative = true;
+            }
+
             sum += Integer.parseInt(digit);
         }
 
+        if(isContainsNegative){
+            throw new IllegalArgumentException("Negatives numbers not allowed: " + negativeNumbers);
+        }
         return sum;
     }
 }
