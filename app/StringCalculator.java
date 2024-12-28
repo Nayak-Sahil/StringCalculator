@@ -8,6 +8,9 @@ public class StringCalculator {
 
         int sum = 0;
 
+        // Replace new line characters with commas
+        numbers = numbers.replace("\n", ",");
+
         // Split the input string by commas to Extract individual numbers
         String[] digits = numbers.split(",");
 
